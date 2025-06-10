@@ -9,6 +9,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Separator } from "@/components/ui/separator"
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
   Trash2,
@@ -26,10 +27,11 @@ import {
   CheckCircle2,
   BarChart,
 } from "lucide-react"
-import { Tooltip as RadixTooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+import { Tooltip as RadixTooltip,TooltipContent, TooltipTrigger,TooltipProvider } from "@/components/ui/tooltip"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { motion, AnimatePresence } from "framer-motion"
 import { Bar, BarChart as RechartsBarChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis, Cell } from "recharts"
+import { Tooltip } from "@radix-ui/react-tooltip"
 
 interface Question {
   text: string
@@ -119,7 +121,7 @@ const plannerColors = ["#3B82F6", "#EF4444", "#10B981", "#F59E0B", "#8B5CF6", "#
 export default function TOPSISAnalysis() {
   const [planners, setPlanners] = useState<Planner[]>([])
   const [results, setResults] = useState<TOPSISResult[]>([])
-  const [showResults, setShowResults] = useState(showResults)
+  const [showResults, setShowResults] = useState(false)
   const [currentStep, setCurrentStep] = useState(1)
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [completionPercentage, setCompletionPercentage] = useState(0)
@@ -424,7 +426,7 @@ export default function TOPSISAnalysis() {
   }
 
   return (
-    <RadixTooltip.Provider>
+    <TooltipProvider>
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="container mx-auto p-6 max-w-7xl">
           {/* Header */}
@@ -938,6 +940,6 @@ export default function TOPSISAnalysis() {
           </div>
         </div>
       </div>
-    </RadixTooltip.Provider>
+    </TooltipProvider>
   )
 }

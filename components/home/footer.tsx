@@ -33,7 +33,7 @@ export function Footer() {
             <span className="font-playfair text-lg font-semibold text-gray-900">Wedding Gate</span>
           </div>
           <p className="text-center text-xs leading-5 text-gray-500 md:text-left mt-2">
-            &copy; 2024 Wedding Gate. All rights reserved.
+            &copy; 2025 Wedding Gate. All rights reserved.
           </p>
         </div>
       </div>

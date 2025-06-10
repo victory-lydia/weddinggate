@@ -10,16 +10,10 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 
 const navigation = [
   { name: "Home", href: "/" },
+
   {
-    name: "Topsis",
-    href: "/topsis",
-    hasDropdown: true,
-    dropdownItems: [
-      { name: "TOPSIS Tool", href: "/topsis" },
-      { name: "Ranking System", href: "/topsis/ranking" },
-      { name: "Evaluation Criteria", href: "/topsis/criteria" },
-    ],
-  },
+    name: "Topsis", href: "/topsis",},
+    
   {
     name: "Operations",
     href: "/operations",
